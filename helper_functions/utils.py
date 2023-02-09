@@ -58,7 +58,7 @@ def plot_loss_curves(results):
   plt.plot(epochs, test_loss, label="test_loss")
   plt.title("Loss")
   plt.xlabel("Epochs")
-  plt.legend
+  plt.legend()
 
   # Plot accuracy curves
   plt.subplot(1, 2, 2)
@@ -66,13 +66,14 @@ def plot_loss_curves(results):
   plt.plot(epochs, test_accuracy, label="test_accuracy")
   plt.title("Accuracy")
   plt.xlabel("Epochs")
-  plt.legend
+  plt.legend()
 
-def view_dataloader_images(dataloader, n=10):
+def view_dataloader_images(dataloader, class_names = class_names, n=10):
   """Visualize images from a dataloader (with and without data augmentation)
 
   Args:
-    dataloader: A dataloader instance (torch.utils.data.DataLoader)
+    dataloader: A dataloader instance (torch.utils.data.DataLoader).
+    class_name: Class names from the dataset (List[str]).
   """
   # From visualization purpose, the number of images (n) should be 10 or lower
   if n > 10:
