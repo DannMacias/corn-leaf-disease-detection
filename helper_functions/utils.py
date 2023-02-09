@@ -88,7 +88,7 @@ def view_dataloader_images(dataloader, n=10):
     sample_scaled = (targ_image - sample_min)/(sample_max - sample_min)
 
     # Plot images with appropiate axes information
-    plt.subplots(1, 10, i+1)
+    plt.subplot(1, 10, i+1)
     plt.imshow(sample_scaled.permute(1, 2, 0)) # resize for matplotlib requirements
     plt.title(class_names[labels[i]])
     plt.axis(False)
