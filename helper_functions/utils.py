@@ -68,21 +68,18 @@ def plot_loss_curves(results):
   plt.xlabel("Epochs")
   plt.legend()
 
-def view_dataloader_images(dataloader, class_names = class_names, n=10):
-  """Visualize images from a dataloader (with and without data augmentation)
-
-  Args:
-    dataloader: A dataloader instance (torch.utils.data.DataLoader).
-    class_name: Class names from the dataset (List[str]).
-  """
-  # From visualization purpose, the number of images (n) should be 10 or lower
-  if n > 10:
-    print(f"Having n higher than 10 will create messy plot, lowering to 10")
-    n = 10
+def view_dataloader_images(dataloader: torch.utils.data.DataLoader,
+                           class_names: List[str],
+                           num_images: int):
   
+  # For visualization purpose, the num_images should be 10 or lower
+  if num_images > 10:
+    print("[INFO] Having num_images higher than 10 will create messy plot, lowering to 10")
+    num_images = 10
+
   imgs, labels = next(iter(dataloader))
   plt.figure(figsize = (16, 8))
-  for i in range(n):
+  for i in range(num_images):
     # Min max scale the image for display purpose
     targ_image = imgs[i]
     sample_min, sample_max = targ_image.min(), targ_image.max()
@@ -90,6 +87,6 @@ def view_dataloader_images(dataloader, class_names = class_names, n=10):
 
     # Plot images with appropiate axes information
     plt.subplot(1, 10, i+1)
-    plt.imshow(sample_scaled.permute(1, 2, 0)) # resize for matplotlib requirements
+    plt.imshow(sample_scaled.permute(1, 2, 0))
     plt.title(class_names[labels[i]])
     plt.axis(False)
