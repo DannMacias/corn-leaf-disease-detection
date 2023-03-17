@@ -110,6 +110,11 @@ These are the conditions that will be used to deploy the model in the Gradio int
 
 ## Conclusions
 
+The application of artificial intelligence in the field is revolutionizing agriculture. Losses in many crops of commercial interest are being reduced by integrating old knowledge with new deep learning models. In particular, identifying pathogens early can prevent pathogens from spreading and increase yields.
+
+In this project, we train a model to classify images of maize leaves. The model is able to distinguish between healthy and diseased leaves. The model selected was ResNet50, which, like GoogleNet, has been used for leaf disease classification (Boulent *et al*., 2019). Although the model achieved over 92% accuracy, there is still room for improvement, especially the imbalance between classes and the similarity of gray leaf spot and blight symptoms, which often require microbiological analysis to identify the correct pathogen. Nevertheless, the results were satisfactory. The model could be used in a mobile application.  
+
+While there is still a great deal of research to be done on computer vision applications in agriculture, the introduction of these new technologies into the field is the first step that must be taken.
 
 ## References
 1. Arun, J., and Gopal, G. (2019). Data for: Identification of plant leaf disease using a 9-layer deep convolutional neural network. Mendeley data, V1.
